@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import Cards from './Cards';
-import Login from './login';
+import Login from './Login';
 import Register from './Register';
 
 const App = () => {
