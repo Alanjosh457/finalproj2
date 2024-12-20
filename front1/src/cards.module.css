@@ -1,0 +1,308 @@
+.profileContainer {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 50%;
+  }
+  
+
+  
+  .card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px;
+  }
+  
+  .pym {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .pmt {
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .smallModal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .closeButton {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    background: #c0392b;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .names{
+    margin-left: 50%;
+    width: 242%;
+    height: 5vh;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 5%;
+  }
+  .email{
+    margin-left: 50%;
+    width: 40%;
+    height: 5vh;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: -2.8%;
+    
+  }
+  .profs{
+    position: absolute;
+  }
+  .country{
+    margin-left: 50%;
+    width: 40%;
+    height: 5vh;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 3.1%;
+  }
+  .gend{
+    margin-left: 8.5%;
+    width: 40%;
+    height: 5vh;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 3.1%;
+  }
+  .fn{
+    margin-left: 50%;
+  }
+  .ea{
+    margin-left: 50%;
+    position: absolute;
+    margin-top: -5%;
+  }
+  .gen{
+    position: absolute;
+    margin-left: 9%;
+    margin-top: 0.7%;
+  }
+  .cy{
+    margin-left: 50%;
+    position: absolute;
+    margin-top: 1%;
+    
+  }
+  .savebtn{
+    background-color: #FC8A06;
+    color: white;
+    position: absolute;
+    width: 6%;
+    border: 15px;
+    margin-left: 84%;
+    margin-top: -8%;
+  }
+  .profileContainer{
+    background-color: white;
+  }
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Modal container */
+  .smallModal {
+    width: 50%;
+    background: linear-gradient(to bottom, #ffffff 70%, #FC8A06 30%); /* 70% white, 30% orange */
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    position: relative; 
+    height: 60vh;
+    position: absolute;
+    /* Make modal container relative for absolute positioning inside it */
+  }
+  
+  /* Heading of modal */
+  .smallModal h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Grouping input fields and labels */
+  .modalInputGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .modalInputGroup label {
+    width: 120px; /* Adjust width of the label to make it aligned with inputs */
+    font-weight: 500;
+    color: #333;
+    margin-right: 10px; /* Spacing between label and input field */
+  }
+  
+  .modalInputGroup input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Buttons container at the bottom of the modal */
+  .modalButtons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px;
+    margin-top: auto; /* Push buttons to the bottom */
+  }
+  
+  /* Button Styles */
+  .modalButtons button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .modalButtons button:hover {
+    opacity: 0.9;
+  }
+  
+  .modalButtons button:nth-child(1) {
+    background-color: #ffffff; /* Green for Save */
+    padding: 15px;
+  }
+  
+  .modalButtons button:nth-child(2) {
+    background-color: #663700; /* Red for Remove */
+    color: white;
+    position: absolute; /* Position button absolutely */
+    left: 20px; /* Push to the left side of the modal */
+    bottom: 20px; /* Position from the bottom of the modal */
+    padding: 15px;
+  }
+  
+  .modalButtons button:nth-child(3) {
+    background-color: #FC8A06; /* Gray for Cancel */
+    color: white;
+  }
+  
+  .paved{
+    position: absolute;
+    margin-top: -8%;
+    margin-left: 10%;
+  }
+  .propic3{
+    margin-left: 7%;
+  position: absolute;
+  margin-top: -8%;
+  }
+  
+  .propic4{
+    margin-top: -12%;
+    position: absolute;
+  }
+  
+  .cardnum{
+    position: absolute;
+    margin-top: -1%;
+    margin-left: 15%;
+    font-weight: 500;
+    font-size: 1.4em;
+  }
+  .cardnam{
+    position: absolute;
+    color: rgb(166, 166, 166);
+    margin-top: 12%;
+    margin-left: 15%;
+  }
+  .card{
+    width: 90%;
+    border: 1px solid rgb(189, 189, 189);
+    height: 8vh;
+  }
+  .credcard{
+    margin-top: 1%;
+    position: absolute;
+    font-size: 0.8em;
+   
+  }
+.pencil1{
+  position: absolute;
+  margin-left: 80%;
+}
+.svmp{
+margin-top: 90%;
+}
+.final{
+  position: absolute;
+  width: 100%;
+  margin-top: 50%;
+}
+.cardInput{
+  margin-top: -10%;
+}
+.popupTitle{
+  margin-top: -0%;
+}
+.username5{
+  margin-top: -6%;
+  position: absolute;
+  margin-left: 15%;
+  font-weight: 700;
+  font-size: 2em;
+  color: black;
+}

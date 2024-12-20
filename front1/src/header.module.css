@@ -1,0 +1,123 @@
+ul{
+ list-style: none;   
+ display: flex;
+ flex-direction: row;
+ margin-left: 70%;
+ gap: 1px;
+ margin-top: 2%;
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: 'poppins';
+}
+button{
+    
+    border-radius: 5px;
+    padding: 10px;
+    width: 140px;
+    height: 6vh;
+    font-size: 1em;
+    
+
+   
+}
+.from{
+    margin-left: -250%;
+}
+.lg1{
+    margin-left: 220%;
+   
+}
+
+.Sign{
+    background-color: black;
+    border: 2px solid #7EA6FF;
+    color: #7EA6FF;
+    width: 90px;
+    margin-left: 80%;
+    cursor: pointer;
+    
+    
+}    
+
+.former{
+    background-color: #1A5FFF;
+    color: white;
+    width: 180px;
+    border: none;
+    margin-left: 50%;
+    font-weight: 700;
+    font-family: 'poppins';
+}
+.hdr{
+    text-align: center;
+    font-size: 4.5em;
+    background: -webkit-linear-gradient(-20deg,#3273ff,hsl(293, 98%, 79%) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 5%;
+    font-weight: 900;
+   
+}
+.vis{
+    margin-top: -1%;
+}
+.hdr2{
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: -5%;
+
+}
+.br1{
+    margin-top: -15%;
+    margin-left: 80%;
+}
+.br2{
+    margin-top: -22%;
+    margin-left: -2%;
+
+}
+.formbot{
+    background-color: #1A5FFF;
+    color: white;
+    margin-top: 2%;
+    width: 270px;
+    height: 10vh;
+    border: none;
+}
+.br3{
+    margin-top: -43%;
+    z-index: 5;
+
+}
+.br4{
+    margin-top: 10%;
+}
+.lg1 .Sign, 
+.lg2 .former {
+  transition: all 0.3s ease;
+}
+
+.lg1 .Sign:hover, 
+.lg2 .former:hover {
+  transform: scale(1.1); /* Slightly enlarge the button */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  background-color: #007BFF; /* Change background color */
+  color: #fff; /* Change text color */
+}
+.cir{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    z-index: 0;
+   
+}
+.or{
+margin-left: 12%;
+}
+.blu{
+    margin-left: -5%;
+
+}
