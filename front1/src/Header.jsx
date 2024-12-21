@@ -32,12 +32,7 @@ const ft='http://res.cloudinary.com/dgkcgjcw5/image/upload/v1734694036/o56b16cct
         <li className={styles.lg1}><button onClick={logger} className={styles.Sign}>Sign in</button></li>
        <li className={styles.lg2}><button className={styles.former}>Create a formbot</button> </li>
         </ul>
-        {/* Display username if logged in */}
-        {username && (
-          <div className={styles.username}>
-            <span>Welcome, {username}!</span>
-          </div>
-        )}
+        
       </div>
 
       <div className={styles.hdr}>

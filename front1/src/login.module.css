@@ -1,3 +1,113 @@
-body{
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Spacing between fields */
+    margin-top: 7%;
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px; /* Spacing between label, input, and error */
+  }
+  
+  label {
+    font-size: 14px;
+    
+  }
+  
+  input {
+    width: 300px;
+    background-color: black;
+    border: 2px solid rgb(122, 122, 122);
+    color: white;
+    height: 30px;
+    border-radius: 10px;
    
+  }
+  
+  .error {
+    color: red;
+    margin-top: -5px; /* Adjust to reduce extra space */
+    margin-bottom: 3px; /* Adds controlled spacing after the error */
+    position: relative;
+    visibility: visible;
+  }
+  
+  .bns{
+    margin-top: 3%;
+  }
+
+  button{
+    width: 300px;
+    background-color: #1A5FFF;
+    color: white;
+    border-radius: 12px;
+    border: none;
+  }
+
+  .or1{
+    margin-top: 1%;
+  }
+
+  .gg{
+    margin-top: 1%;
+  }
+  .link {
+    color: rgb(55, 55, 210);
+    text-decoration: underline;
+    background: none;
+    border: none;
+    width: 120px;
+    cursor: pointer;
+  }
+  .alr{
+    margin-left: 1%;
+  }
+ 
+  .g1{
+    margin-left: -80%;
+    background-color: white;
+    border-radius: 20px;
+    width: 20px;
+    border: 5px solid white;
+    margin-top: -1%;
+  }
+  .g3{
+    margin-top: -10%;
+    margin-left: 2%;
+  }
+  .decorativeWrapper {
+    position: relative;
+  }
+  .po1, .e22, .e1{
+    z-index: -1; /* Keeps decorations behind form elements */
+    position: fixed;
+    pointer-events: none; /* Decorations won't block user interactions */
+  }
+
+  .po1 {
+    top:16%;
+    left: 5%;
+  }
+  
+  .e22 {
+    top: 10%;
+    right: -2%;
+  }
+  
+  .e1 {
+    bottom: -2%;
+    left: 70%;
+    transform: translateX(-50%);
+  }
+  
+ .back1{
+    z-index: 5;
+  }
+.arr2{
+  margin-top: 1%;
+  cursor: pointer;
 }
