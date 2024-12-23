@@ -1,0 +1,159 @@
+/* formsPage.module.css */
+
+/* General styles */
+.formbotContainer {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.mainContent {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #404040;
+  padding: 15px;
+  border-radius: 8px;
+  position: sticky; /* Make the sidebar sticky */
+  top: 20px; /* Adjust this value if necessary to control the distance from the top of the page */
+  height: calc(100vh - 40px); /* Ensure it occupies full viewport height minus padding */
+  overflow-y: auto; /* Enable scrolling for sidebar if needed */
+}
+
+.sidebar h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar button:hover {
+  background-color: #45a049;
+}
+
+.formContainer {
+  flex: 2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formField {
+  margin-bottom: 20px;
+}
+
+.formField label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.formField input,
+.formField select,
+.formField textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.formField input[type="file"] {
+  padding: 5px;
+}
+
+.uploadedImage,
+.uploadedVideo {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.textBubble {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .mainContent {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .formContainer {
+    width: 100%;
+  }
+
+  .formField input,
+  .formField select,
+  .formField textarea {
+    font-size: 0.9rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .sidebar button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formbotContainer {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar {
+    padding: 10px;
+  }
+
+  .sidebar button {
+    font-size: 0.8rem;
+    padding: 7px;
+  }
+
+  .formField input,
+  .formField select,
+  .formField textarea {
+    font-size: 0.8rem;
+  }
+
+  .textBubble {
+    height: 80px;
+  }
+}

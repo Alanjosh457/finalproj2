@@ -26,17 +26,20 @@ button{
     margin-left: -250%;
 }
 .lg1{
-    margin-left: 220%;
+   
    
 }
-
+.signer{
+    margin-top: -60%;
+}
 .Sign{
     background-color: black;
     border: 2px solid #7EA6FF;
     color: #7EA6FF;
     width: 90px;
-    margin-left: 80%;
+    
     cursor: pointer;
+    margin-left: -55%;
     
     
 }    
@@ -120,4 +123,10 @@ margin-left: 12%;
 .blu{
     margin-left: -5%;
 
+}
+.lg1{
+    margin-left: -10%;
+}
+.button{
+    cursor: pointer;
 }

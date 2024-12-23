@@ -4,6 +4,7 @@ const env = require("dotenv");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/user");
 const cardRoutes = require("./routes/cards");
+const folderRoutes = require("./routes/folders");
 const cors = require("cors");
 app.use(cors(
     {
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 
 
   app.use("/api/user",  userRoutes);
+  app.use("/api/folders", folderRoutes);
   app.use("/api/cards", cardRoutes);
 
 

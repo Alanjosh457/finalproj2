@@ -5,7 +5,9 @@ import { Toaster } from 'react-hot-toast'; // Import Toaster
 import Login from './Login';
 import Register from './Register';
 import Home from './Home';
-
+import FormsPage from './FormsPage';
+import ResponsePage from './response';
+import Settings from './settings';
 const App = () => {
   return (
     <div>
@@ -19,6 +21,10 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/forms/:formbotId" element={<FormsPage />} />
+        <Route path="/response" element={<ResponsePage />} />
+     
         
         {/* Add more routes here if needed */}
       </Routes>
