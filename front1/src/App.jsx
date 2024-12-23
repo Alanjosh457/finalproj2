@@ -7,7 +7,7 @@ import Register from './Register';
 import Home from './Home';
 import FormsPage from './FormsPage';
 import ResponsePage from './ResponsePage';
-import Settings from './settings';
+import Settings from './Settings';
 const App = () => {
   return (
     <div>
