@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import styles from './responsePage.module.css';
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import styles from "./responsePage.module.css";
 
 const ResponsePage = () => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const ResponsePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form responses:', responses); // Log the completed form data
+    console.log("Form responses:", responses); // Log the completed form data
     // Optionally send responses to a backend server
   };
 
@@ -29,7 +29,7 @@ const ResponsePage = () => {
               <label>{field.label}</label>
 
               {/* Editable Inputs for Applicant */}
-              {field.type === 'text' && (
+              {field.type === "text" && (
                 <input
                   type="text"
                   value={field.value}
@@ -37,57 +37,35 @@ const ResponsePage = () => {
                   placeholder="Enter text"
                 />
               )}
-              {field.type === 'phone' && (
-                <input
-                  type="tel"
-                  value={field.value}
-                  onChange={(e) => handleInputChange(e, index)}
-                  placeholder="Enter phone number"
-                />
-              )}
-              {field.type === 'email' && (
-                <input
-                  type="email"
-                  value={field.value}
-                  onChange={(e) => handleInputChange(e, index)}
-                  placeholder="Enter email"
-                />
-              )}
 
               {/* Bubble - Display as text */}
-              {field.type === 'bubble' && (
+              {field.type === "bubble" && (
                 <div className={styles.bubble}>
                   <p>{field.value}</p>
                 </div>
               )}
 
-              {/* Date Field */}
-              {field.type === 'date' && (
-                <input
-                  type="date"
-                  value={field.value}
-                  onChange={(e) => handleInputChange(e, index)}
-                />
+              {/* Image Field */}
+              {field.type === "image" && field.value && (
+                <div>
+                  <img
+                    src={field.value}
+                    alt="Uploaded"
+                    className={styles.uploadedImage}
+                  />
+                </div>
               )}
 
-              {/* Rating Field */}
-              {field.type === 'rating' && (
-                <select
-                  value={field.value}
-                  onChange={(e) => handleInputChange(e, index)}
-                >
-                  <option value="">Select Rating</option>
-                  <option value="1">1/5</option>
-                  <option value="2">2/5</option>
-                  <option value="3">3/5</option>
-                  <option value="4">4/5</option>
-                  <option value="5">5/5</option>
-                </select>
+              {/* Handle Missing Image */}
+              {field.type === "image" && !field.value && (
+                <p className={styles.error}>Image not found</p>
               )}
 
               {/* Submit Button */}
-              {field.type === 'submit' && (
-                <button type="submit">Submit Form</button>
+              {field.type === "submit" && (
+                <button type="submit" className={styles.submitButton}>
+                  Submit Form
+                </button>
               )}
             </div>
           ))}

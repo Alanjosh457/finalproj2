@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { useNavigate } from "react-router-dom"; 
+import { uploadImageToCloudinary } from "./services"; // Import the service
 import styles from "./formsPage.module.css"; // Assuming you have styling for the page
 
 const FormsPage = () => {
-  const navigate = useNavigate(); // Initialize the useNavigate hook
-  const [formFields, setFormFields] = useState([]); // Store the sequence of fields added
+  const navigate = useNavigate(); 
+  const [formFields, setFormFields] = useState([]); 
 
   // Handle adding new input field or response type to form
   const handleAddField = (fieldType) => {
@@ -12,10 +13,25 @@ const FormsPage = () => {
     setFormFields([...formFields, newField]); // Add new field to the sequence
   };
 
-  // Handle navigation to the response page
+  // Handle image upload and update the formFields state
+  const handleImageUpload = async (e, index) => {
+    const file = e.target.files[0];
+    const token = localStorage.getItem('token'); // Retrieve the token, or pass it from the parent
+
+    const result = await uploadImageToCloudinary(file, token); // Call the service function
+    if (result.success) {
+      const updatedFields = [...formFields];
+      updatedFields[index].value = result.imageUrl; // Set the Cloudinary URL as the value for the image field
+      setFormFields(updatedFields);
+    } else {
+      console.error("Error uploading image:", result.message);
+    }
+  };
+
+  // Handle form submission and navigate to the response page
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/response", { state: { formFields } }); // Navigate to the response page with formFields as state
+    navigate("/response", { state: { formFields } });
   };
 
   return (
@@ -91,13 +107,7 @@ const FormsPage = () => {
                     <input
                       type="file"
                       accept="image/*"
-                      onChange={(e) => {
-                        const updatedFields = [...formFields];
-                        updatedFields[index].value = URL.createObjectURL(
-                          e.target.files[0]
-                        );
-                        setFormFields(updatedFields);
-                      }}
+                      onChange={(e) => handleImageUpload(e, index)} // Call handleImageUpload function
                     />
                     {field.value && (
                       <img

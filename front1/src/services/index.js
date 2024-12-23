@@ -1,4 +1,5 @@
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
+const CLOUDINARY_URL=import.meta.env.VITE_BACKEND_URL_FOR_CLOUDINARY
 export const register = async (data) => {
     const response = await fetch(`${BACKEND_URL}/api/user/signup`, {
         method: 'POST',
@@ -113,4 +114,33 @@ export const getFormbots = async (token, folderId) => {
 
   const data = await response.json();
   return data; // assuming the response contains the formbots directly
+};
+
+
+export const uploadImageToCloudinary = async (file, token) => {
+  const formData = new FormData();
+  formData.append("image", file); // Append the image to the FormData object
+
+  const response = await fetch(`${CLOUDINARY_URL}/api/users//upload`, {
+    method: "POST",
+    body: formData,
+    headers: {
+      'Authorization': `Bearer ${token}`, // Assuming you need a token for auth
+    },
+  });
+
+  const data = await response.json();
+
+  if (response.ok) {
+    return {
+      success: true,
+      message: data.message,
+      imageUrl: data.data.secure_url, // Assuming Cloudinary response contains the URL at `secure_url`
+    };
+  } else {
+    return {
+      success: false,
+      message: data.message || "An error occurred while uploading.",
+    };
+  }
 };
