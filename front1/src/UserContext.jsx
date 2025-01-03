@@ -6,7 +6,9 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
     name: '',
     email: '',
+    _id: '',
   });
+  
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

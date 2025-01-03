@@ -30,7 +30,7 @@ const ft='http://res.cloudinary.com/dgkcgjcw5/image/upload/v1734694036/o56b16cct
    
     <li className={styles.from}><img src={frombot}></img></li>
         <li className={styles.lg1}><button onClick={logger} className={styles.Sign}>Sign in</button></li>
-       <li className={styles.lg2}><button className={styles.former}>Create a formbot</button> </li>
+       <li className={styles.lg2}><button  onClick={logger} className={styles.former}>Create a formbot</button> </li>
         </ul>
         
       </div>

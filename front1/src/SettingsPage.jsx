@@ -1,18 +1,23 @@
 import React, { useState, useContext } from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { updateUser } from './services';
 import { UserContext } from './UserContext';
 import styles from './settings.module.css';
-import i1 from './images/i1.png';
+import propic from './images/propic.png';
 import lock from './images/lock.png';
 import eye from './images/eye.png';
+import logout from './images/logout22.png';
 
-const Settings = () => {
+const SettingsPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const { setUser } = useContext(UserContext);
+  const [showOldPassword, setShowOldPassword] = useState(false); // Track visibility for old password
+  const [showNewPassword, setShowNewPassword] = useState(false); // Track visibility for new password
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -65,12 +70,31 @@ const Settings = () => {
     }
   };
 
+  // Toggle visibility of the old password
+  const toggleOldPasswordVisibility = () => {
+    setShowOldPassword(!showOldPassword);
+  };
+
+  // Toggle visibility of the new password
+  const toggleNewPasswordVisibility = () => {
+    setShowNewPassword(!showNewPassword);
+  };
+
+  // Handle logout functionality
+  const handleLogout = () => {
+    // Clear user data from context and local storage
+    
+    // Optionally, redirect to login page or home
+    navigate('/'); // Replace '/login' with your actual login route
+  };
+
   return (
     <div className={styles.container}>
-      <h2>Update Your Settings</h2>
+      <h2>Settings</h2>
       <form onSubmit={handleUpdate} className={styles.form}>
         <div className={styles.inputGroup}>
-     <input
+          <img src={propic} alt="Profile" className={styles.loc} />
+          <input
             type="text"
             id="name"
             value={name}
@@ -78,8 +102,9 @@ const Settings = () => {
             placeholder="Enter your new name"
           />
         </div>
-        <div className={styles.inputGroup} >
-  <input
+        <div className={styles.inputGroup}>
+          <img src={lock} alt="Lock" className={styles.loc} />
+          <input
             type="email"
             id="email"
             value={email}
@@ -88,20 +113,31 @@ const Settings = () => {
           />
         </div>
         <div className={styles.inputGroup}>
-        <img src={lock} alt="Lock" className={styles.loc} />
-       <input
-            
-            type="password"
+          <img src={lock} alt="Lock" className={styles.loc} />
+          <img
+            src={eye}
+            alt="Show Password"
+            className={styles.eye1}
+            onClick={toggleOldPasswordVisibility}
+          />
+          <input
+            type={showOldPassword ? 'text' : 'password'} // Toggle password visibility
             id="oldPassword"
             value={oldPassword}
             onChange={(e) => setOldPassword(e.target.value)}
             placeholder="Enter your old password"
-           
           />
         </div>
         <div className={styles.inputGroup}>
-        <input
-            type="password"
+          <img src={lock} alt="Lock" className={styles.loc} />
+          <img
+            src={eye}
+            alt="Show Password"
+            className={styles.eye1}
+            onClick={toggleNewPasswordVisibility}
+          />
+          <input
+            type={showNewPassword ? 'text' : 'password'} // Toggle password visibility
             id="newPassword"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
@@ -112,8 +148,18 @@ const Settings = () => {
           Update
         </button>
       </form>
+
+      {/* Logout Button */}
+      <div className={styles.loggers}>
+        <img
+          src={logout}
+          alt="Logout"
+          className={styles.logoutImage}
+          onClick={handleLogout}
+        />
+      </div>
     </div>
   );
 };
 
-export default Settings;
+export default SettingsPage;

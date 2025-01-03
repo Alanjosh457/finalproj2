@@ -3,6 +3,8 @@ import styles from "./login.module.css";
 import { login } from './services';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
+
 
 
 const Login = () => {
@@ -88,8 +90,13 @@ const Login = () => {
       if (response.token) {
         localStorage.setItem("token", response.token);
         localStorage.setItem('username', response.username);
+       
+        const decoded = jwtDecode(response.token);
+        const workspaceId = decoded._id;
         
-        navigate("/Home");
+
+        
+        navigate(`/Home/${workspaceId}`);
       }
     } catch (error) {
       console.log(error);

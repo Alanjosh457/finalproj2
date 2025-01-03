@@ -1,0 +1,66 @@
+.navbar {
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Make it span the full width of the viewport */
+    background-color: #09090b; /* Dark background color */
+    padding: 10px 20px; /* Add some padding */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    z-index: 1000; /* Ensure it stays above other elements */
+    text-decoration: none;
+    height: 6vh;
+    border-bottom: 1px solid rgb(66, 66, 66);
+   
+   
+  }
+  
+  .navLinks {
+    display: flex; /* Align items horizontally */
+   
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    text-decoration: none;
+    margin-top: 0.5%;
+   
+   
+  }
+  
+  .link {
+    color:white;/* White text color for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Increase font size for readability */
+    font-weight: 500; /* Medium weight */
+    padding: 10px 15px; /* Add padding for clickable area */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+    border-radius: 5px; /* Rounded corners for hover effect */
+    
+  }
+  
+  .link:hover {
+    background-color: #0057a4; /* Green background on hover */
+    color: #ffffff; /* Ensure text remains white */
+  }
+  
+  .activeLink {
+ border: 1px solid #7EA6FF; /* Blue background for active links */
+ color: #7EA6FF;
+    font-weight: 700; /* Bold for active link */
+    border-radius: 5px; /* Rounded corners for active state */
+    padding: 6px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-decoration: none;
+  }
+  
+
+  .modes22{
+    gap: 90px;
+    margin-top: -1%;
+margin-left: 57%;
+  }
+
+.lightmode  .navbar{
+  color: black;
+}
